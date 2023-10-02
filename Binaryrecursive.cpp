@@ -2,25 +2,30 @@
 using namespace std;
 int lr(int a[],int b,int end,int e,int & loc)
 {
-
-    if(b<=e)
+    
+    if(b>e)
     {
-     int mid=int((b+e)/2);
-     if(e==a[mid])
-     {
-        loc=mid;
+        loc=-1;
         return 0;
-     }
-    else if(e<a[mid])
+    }
+    else
+    {
+      int mid=int((b+e)/2);
+      if(e<a[mid])
       {
           return lr(a,b,mid-1,e,loc);
       }
-    else
+     else
+        if(e>a[mid])
       {
           return lr(a,mid+1,end,e,loc);
       }
+     else
+        {
+            loc=mid;
+            return 1;
+        }
     }
-    return 1;
 }
 int main()
 {
@@ -34,7 +39,7 @@ int main()
    cin>>ele;
    end=n-1;
    f=lr(a,beg,end,ele,loc);
-   if(f==0)
+   if(f)
    cout<<"found at index: "<<loc;
   else
    cout<<"Not found";
