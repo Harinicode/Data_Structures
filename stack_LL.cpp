@@ -70,7 +70,7 @@ class stack
             }
             void isempty()
             {
-                if(list->top==-1)
+                if(list->top==NULL))
                     cout<<"List is empty\n";
                 else
                     cout<<"List is not empty";
@@ -78,7 +78,7 @@ class stack
             }
             void stacktop()
             {
-                if(list->top==-1)
+                if(list->top==NULL)
                     cout<<"List is empty\n";
                 else
                     cout<<"Stack top element:"<<list->top->data;
