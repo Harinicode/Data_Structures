@@ -91,7 +91,7 @@ void infixp::convert()
         else if(c==')')
         {
 
-            while(c!='(')
+            while(stacktop()!='(')
             {
                 x=pop();
                 postfix[++j]=x;
